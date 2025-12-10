@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Irsa Kitchen Dispatch</title>
+    <!-- Tailwind via CDN for simplicity in this hybrid setup -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -21,6 +22,14 @@
             },
             animation: {
               'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'pulse-fast-border': 'pulseBorder 2s infinite',
+              'bounce-subtle': 'bounce 2s infinite',
+            },
+            keyframes: {
+              pulseBorder: {
+                '0%, 100%': { borderColor: 'rgba(249, 115, 22, 1)' },
+                '50%': { borderColor: 'rgba(249, 115, 22, 0.2)' },
+              }
             }
           }
         }
@@ -33,17 +42,20 @@
   <script type="importmap">
 {
   "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.559.0",
-    "react/": "https://esm.sh/react@^19.2.1/",
     "react": "https://esm.sh/react@^19.2.1",
     "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+    "react/": "https://esm.sh/react@^19.2.1/",
     "react-router-dom": "https://esm.sh/react-router-dom@^7.10.1",
-    "uuid": "https://esm.sh/uuid@^13.0.0"
+    "lucide-react": "https://esm.sh/lucide-react@^0.559.0",
+    "uuid": "https://esm.sh/uuid@^13.0.0",
+    "vite": "https://esm.sh/vite@^7.2.7",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

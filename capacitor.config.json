@@ -1,0 +1,8 @@
+{
+  "appId": "com.irsakitchen.delivery",
+  "appName": "Irsa Kitchen",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
